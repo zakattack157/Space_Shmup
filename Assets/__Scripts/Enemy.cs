@@ -11,9 +11,9 @@ public class Enemy : MonoBehaviour
     public float health = 10; // Damage needed to destroy this enemy
     public int score = 100; // Points earned for destroying this
 
-    private BoundsCheck bndCheck;
+    protected BoundsCheck bndCheck;
 
-    private void Awake()
+    public void Awake()
     {
         bndCheck = GetComponent<BoundsCheck>();    
     }
@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
   
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         Move();
 
@@ -61,7 +61,7 @@ public class Enemy : MonoBehaviour
         pos = tempPos;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
         GameObject otherGO = collision.gameObject;
         if (otherGO.GetComponent<ProjectileHero>() != null)
