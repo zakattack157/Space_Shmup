@@ -61,17 +61,28 @@ public class Enemy : MonoBehaviour
         pos = tempPos;
     }
 
-    public void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
         GameObject otherGO = collision.gameObject;
-        if (otherGO.GetComponent<ProjectileHero>() != null)
+        //Check for collision with ProjectileHero
+        ProjectileHero p = otherGO.GetComponent<ProjectileHero>();
+        if (p != null)
         {
+            //Only damage this enemy if its on screen
+            if (bndCheck.isOnScreen)
+            {
+                //Get damage amount from the Main WEAP_DICT.
+                health -= Main.GET_WEAPON_DEFINITION(p.type).damageOnHit;
+                if(health <= 0)
+                {
+                    Destroy(this.gameObject);
+                }
+            }
             Destroy(otherGO);
-            Destroy(gameObject);
         }
         else
         {
-            Debug.Log("Enemy hit by non-ProjectileHero: " + otherGO.name);
+            print("Enemy hit by non-ProjectileHero: " + otherGO.name);
         }
     }
 }
