@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a352487c1dbf72e4992e4e8abf746c06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showingColor: 0
+  showingColor: 1
   blinkCompleteTime: 0
   ignoreOnCollisionEnter: 0
 --- !u!114 &7958928899555935263
@@ -364,7 +364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a352487c1dbf72e4992e4e8abf746c06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showingColor: 0
+  showingColor: 1
   blinkCompleteTime: 0
   ignoreOnCollisionEnter: 0
 --- !u!114 &2427622299975901570
@@ -1073,7 +1073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a352487c1dbf72e4992e4e8abf746c06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showingColor: 0
+  showingColor: 1
   blinkCompleteTime: 0
   ignoreOnCollisionEnter: 0
 --- !u!114 &2491803152952397995
@@ -1189,7 +1189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boundsType: 1
   radius: 8
-  keepOnScreen: 0
+  keepOnScreen: 1
   screenLocs: 0
   camWidth: 0
   camHeight: 0
@@ -1205,7 +1205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a352487c1dbf72e4992e4e8abf746c06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showingColor: 0
+  showingColor: 1
   blinkCompleteTime: 0
   ignoreOnCollisionEnter: 0
 --- !u!114 &7548401966725218366
