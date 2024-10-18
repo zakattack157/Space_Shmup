@@ -705,6 +705,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnEnemies: 1
   prefabEnemies:
+  - {fileID: 4996642896488257887, guid: 166b0264a576f844d91fb3a3bb37f1ab, type: 3}
+  - {fileID: 4996642896488257887, guid: 166b0264a576f844d91fb3a3bb37f1ab, type: 3}
+  - {fileID: 4996642896488257887, guid: 166b0264a576f844d91fb3a3bb37f1ab, type: 3}
+  - {fileID: 4996642896488257887, guid: 166b0264a576f844d91fb3a3bb37f1ab, type: 3}
+  - {fileID: 4996642896488257887, guid: 166b0264a576f844d91fb3a3bb37f1ab, type: 3}
+  - {fileID: 4996642896488257887, guid: 166b0264a576f844d91fb3a3bb37f1ab, type: 3}
+  - {fileID: 5291225368636678736, guid: 2f1f20e0f9dea2c47b82e901679bf1a2, type: 3}
+  - {fileID: 5291225368636678736, guid: 2f1f20e0f9dea2c47b82e901679bf1a2, type: 3}
+  - {fileID: 5291225368636678736, guid: 2f1f20e0f9dea2c47b82e901679bf1a2, type: 3}
+  - {fileID: 9223204426459058366, guid: 581bef8ccbd5a90488ef10c92f5034c5, type: 3}
+  - {fileID: 9223204426459058366, guid: 581bef8ccbd5a90488ef10c92f5034c5, type: 3}
+  - {fileID: 9223204426459058366, guid: 581bef8ccbd5a90488ef10c92f5034c5, type: 3}
+  - {fileID: 9223204426459058366, guid: 581bef8ccbd5a90488ef10c92f5034c5, type: 3}
+  - {fileID: 1423365709950699592, guid: 27a3b61315686a44290c173a67fbecc2, type: 3}
+  - {fileID: 1423365709950699592, guid: 27a3b61315686a44290c173a67fbecc2, type: 3}
+  - {fileID: 1423365709950699592, guid: 27a3b61315686a44290c173a67fbecc2, type: 3}
   - {fileID: 8511413681626470124, guid: 486b535a9aae8446f9346d286631b31d, type: 3}
   enemySpawnPerSecond: 0.5
   enemyInsetDefault: 1.5
