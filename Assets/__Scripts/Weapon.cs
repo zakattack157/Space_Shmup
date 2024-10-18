@@ -16,6 +16,7 @@ public enum eWeaponType
     phaser,     //[NI] Shots that move in waves
     missile,    //[NI] Homing missiles
     laser,      //[NI] Damage over time
+    mixed,      //Mix of spread and blaster
     shield      //Raise shieldLevel
 }
 
@@ -59,9 +60,11 @@ public class Weapon : MonoBehaviour
     private eWeaponType _type = eWeaponType.none;
     public WeaponDefinition def;
     public float nextShotTime;
+    static public int mixCounter = 0;
 
     private GameObject weaponModel;
     private Transform shotPointTrans;
+
 
     void Start()
     {
@@ -137,6 +140,35 @@ public class Weapon : MonoBehaviour
                 p = MakeProjectile();
                 p.transform.rotation = Quaternion.AngleAxis(-10, Vector3.back);
                 p.vel = p.transform.rotation * vel;
+                break;
+            case eWeaponType.mixed:
+                if(mixCounter % 3 == 0)
+                {
+                    p = MakeProjectile();
+                    p.vel = vel;
+                    p = MakeProjectile();
+                    Vector3 newPosition = p.transform.position;
+                    newPosition.x -= 1;
+                    p.transform.position = newPosition;
+                    p.vel = vel;
+                    p = MakeProjectile();
+                    newPosition.x += 2;
+                    p.transform.position = newPosition;
+                    p.vel = vel;
+                 
+                }
+                else
+                {
+                    p = MakeProjectile();
+                    p.vel = vel;
+                    p = MakeProjectile();
+                    p.transform.rotation = Quaternion.AngleAxis(10, Vector3.back);
+                    p.vel = p.transform.rotation * vel;
+                    p = MakeProjectile();
+                    p.transform.rotation = Quaternion.AngleAxis(-10, Vector3.back);
+                    p.vel = p.transform.rotation * vel;
+                }
+                mixCounter++;
                 break;
 
         }
