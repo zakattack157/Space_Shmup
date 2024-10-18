@@ -31,7 +31,11 @@ public class Hero : MonoBehaviour
             S = this;
         else
             Debug.LogError("Hero.Awake() - Attampted to assign second Hero.S!");
-       // fireEvent += TempFire;
+        // fireEvent += TempFire;
+
+        //Reset the weapons to start _Hero with 1 blaster
+        ClearWeapons();
+        weapons[0].SetType(eWeaponType.blaster);
     }
     
    
@@ -92,7 +96,25 @@ public class Hero : MonoBehaviour
         Debug.Log("Absorbed PowerUp: " + pUp.type);
         switch (pUp.type)
         {
+            case eWeaponType.shield:
+                shieldLevel++;
+                break;
 
+            default:
+                if(pUp.type == weapons[0].type)
+                {
+                    Weapon weap = GetEmptyWeaponSlot();
+                    if (weap != null)
+                    {
+                        weap.SetType(pUp.type);
+                    }
+                }
+                else
+                {
+                    ClearWeapons();
+                    weapons[0].SetType(pUp.type);
+                }
+                break;
         }
         pUp.AbosrbedBy(this.gameObject);
     }
@@ -109,6 +131,33 @@ public class Hero : MonoBehaviour
                 Destroy(this.gameObject);
                 Main.HERO_DIED();
             }
+        }
+    }
+
+    ///<summary>
+    ///Finds the first empty weapon slot (i.e., type=none) and returns it.
+    ///</summary>
+    ///<returns>The first empty weapon slot or null if none are empty</returns>
+    Weapon GetEmptyWeaponSlot()
+    {
+        for (int i = 0; i < weapons.Length; i++)
+        {
+            if (weapons[i].type == eWeaponType.none)
+            {
+                return (weapons[i]);
+            }
+        }
+        return (null);
+    }
+
+    ///<summary>
+    ///Sets the type of all weapon slots to none
+    ///</summary>
+    void ClearWeapons()
+    {
+        foreach (Weapon w in weapons)
+        {
+            w.SetType(eWeaponType.none);
         }
     }
 
